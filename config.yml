@@ -1,0 +1,32 @@
+site_url: https://cheery-kataifi-6ade35.netlify.app
+
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "uploads"
+public_folder: "/uploads"
+
+site_url: "/"
+display_url: "/"
+
+collections:
+  - name: "store"
+    label: "Store"
+    files:
+      - file: "content/products.json"
+        label: "Products"
+        name: "products"
+        fields:
+          - label: "Products"
+            name: "items"
+            widget: "list"
+            summary: "{{fields.name}} — £{{fields.price}}"
+            fields:
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Price", name: "price", widget: "number", value_type: "float", min: 0 }
+              - { label: "Description", name: "description", widget: "text", required: false }
+              - { label: "Image", name: "image", widget: "image", required: false }
+              - { label: "Order Link (SumUp/Checkout)", name: "order_link", widget: "string", required: false }
+              - { label: "In Stock", name: "in_stock", widget: "boolean", default: true }
+              - { label: "Sort Order (higher = first)", name: "sort_order", widget: "number", value_type: "int", required: false }

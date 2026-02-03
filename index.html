@@ -26,4 +26,33 @@
       });
     </script>
   </body>
+</html><!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HECS Admin</title>
+
+  <!-- Netlify Identity -->
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>
+
+<body>
+  <script>
+    // Tell Netlify CMS to look for the config in /admin/config.yml
+    window.CMS_MANUAL_INIT = true;
+  </script>
+
+  <!-- Netlify CMS -->
+  <script src="https://unpkg.com/netlify-cms@^2.10.0/dist/netlify-cms.js"></script>
+
+  <script>
+    window.addEventListener("load", function () {
+      if (window.CMS) {
+        window.CMS.init({ configFile: "/admin/config.yml" });
+      }
+    });
+  </script>
+</body>
 </html>
+
